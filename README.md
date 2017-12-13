@@ -11,9 +11,9 @@ authors of the script to convert from letters to numbers
 
 
 
-## ngProgress.js
+## ngToLetters.js
 
-[![GitHub](https://github.com/nik0571/ngToLetters)](https://github.com/nik0571/ngToLetters
+[[GitHub](https://github.com/nik0571/ngToLetters)](https://github.com/nik0571/ngToLetters
 
 ## Usage
 
