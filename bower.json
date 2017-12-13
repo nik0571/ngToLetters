@@ -1,0 +1,31 @@
+{
+  "name": "ngToLetters",
+  "homepage": "https://github.com/nik0571/ngToLetters",
+  "authors": [
+    "Naycool Gonzalez <naycoolgonzalez@gmail.com>"
+  ],
+  "description": "Convert from numbers to letters",
+  "main": "index.html",
+  "keywords": [
+    "numbers",
+    "to",
+    "letters",
+    "Convert",
+    "angular",
+    "directive.",
+    "filter",
+    "factory",
+    "angularjs",
+    "ng",
+    "javascript"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
