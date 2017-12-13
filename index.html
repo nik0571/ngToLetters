@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Ng To Letters</title>
+  </head>
+
+  <body ng-controller="myCtrl">
+
+    <input type="text" ng-model="value" maxlength="9">
+
+    <ul id="ul">
+      <li>Directiva: <span ng-to-letters="value"></span></li>
+      <li>Filtro:    <span>{{value | ngToLetters}}</span></li>
+    </ul>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="scripts/app.min.js"></script>
+    <script src="dist/ngToLetters.min.js"></script>
+  </body>
+
+</html>
