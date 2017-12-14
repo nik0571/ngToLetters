@@ -209,8 +209,8 @@
         enteros: Math.floor(num),
         centavos: (((Math.round(num * 100)) - (Math.floor(num) * 100))),
         letrasCentavos: "",
-        letrasMonedaPlural: optional.pluralCurrency,
-        letrasMonedaSingular: optional.singularCurrency
+        letrasMonedaPlural: optional.pluralCurrency.toUpperCase(),
+        letrasMonedaSingular: optional.singularCurrency.toUpperCase()
       };
 
       if (data.centavos > 0)
