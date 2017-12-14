@@ -201,14 +201,16 @@
       //return Seccion(num, divisor, "UN MILLON", "MILLONES") + " " + Miles(resto);
     } //Millones()
 
-    function NumeroALetras(num) {
+    function NumeroALetras(num, optional = {}) {
+      optional.pluralCurrency = optional.pluralCurrency || 'PESOS';
+      optional.singularCurrency = optional.singularCurrency || 'PESO';
       var data = {
         numero: num,
         enteros: Math.floor(num),
         centavos: (((Math.round(num * 100)) - (Math.floor(num) * 100))),
         letrasCentavos: "",
-        letrasMonedaPlural: "PESOS",
-        letrasMonedaSingular: "PESO"
+        letrasMonedaPlural: optional.pluralCurrency,
+        letrasMonedaSingular: optional.singularCurrency
       };
 
       if (data.centavos > 0)
@@ -239,8 +241,8 @@
    * @desc se crea filtro para ser utilizado en angular
    */
   function _filter(ngToLetters) {
-    return function (input, optional1, optional2) {
-      return ngToLetters.NumeroALetras(input);
+    return function (input, optional1 = {}, optional2) {
+      return ngToLetters.NumeroALetras(input,optional1);
     }
   }
 
@@ -252,11 +254,16 @@
     return {
       restrict: 'A',
       scope: {
-        ngToLetters: "="
+        ngToLetters: "=",
+        pluralCurrency: "@",
+        singularCurrency: "@",
       },
       link: function (scope, element, attrs) {
         scope.$watch('ngToLetters',function (newValue) {
-          element.html($filter('ngToLetters')(newValue));
+          element.html($filter('ngToLetters')(newValue, {
+            pluralCurrency: scope.pluralCurrency,
+            singularCurrency: scope.singularCurrency
+          }));
         });
       },
     }
