@@ -39,12 +39,16 @@ Use ** ngToLetters ** with directive
 
 ```html
   <span ng-to-letters="value"></span>
+
+  <span ng-to-letters="value" plural-currency="PESOS" singular-surrency="PESO"></span>
 ```
 
 Use ** ngToLetters ** with filter
 
 ```html
   <span>{{value | ngToLetters}}<span>
+
+  <span>{{value | ngToLetters:{pluralCurrency: 'PESOS', singularSurrency: 'PESO' } }}</span>
 ```
 
 Inject **ngToLetters** in your controller
@@ -57,4 +61,6 @@ Create a instance of the progressbar
 
 ```javascript
   ngToLetters.NumeroALetras(value);
+
+  ngToLetters.NumeroALetras(value,{pluralCurrency: 'PESOS', singularSurrency: 'PESO' });
 ```

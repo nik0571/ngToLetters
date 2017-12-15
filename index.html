@@ -11,8 +11,8 @@
     <input type="text" ng-model="value" maxlength="9">
 
     <ul id="ul">
-      <li>Directiva: <span ng-to-letters="value"></span></li>
-      <li>Filtro:    <span>{{value | ngToLetters}}</span></li>
+      <li>Directiva: <span ng-to-letters="value" plural-currency="PESOS" singular-surrency="PESO"></span></li>
+      <li>Filtro:    <span>{{value | ngToLetters:{pluralCurrency: 'PESOS', singularSurrency: 'PESO' } }}</span></li>
     </ul>
 
     <script src="bower_components/angular/angular.min.js"></script>
